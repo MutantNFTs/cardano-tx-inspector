@@ -1,0 +1,36 @@
+{
+  "name": "@mutants/cardano-tx-inspector",
+  "version": "0.0.1",
+  "description": "A package that provides utility functions to inspect a cardano transaction",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MutantNFTs/cardano-tx-inspector.git"
+  },
+  "keywords": [
+    "cardano",
+    "tx",
+    "inspector",
+    "mutants"
+  ],
+  "author": "glneto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MutantNFTs/cardano-tx-inspector/issues"
+  },
+  "homepage": "https://github.com/MutantNFTs/cardano-tx-inspector#readme",
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@blockfrost/blockfrost-js": "^5.3.1",
+    "@cardano-ogmios/client": "^5.6.0",
+    "@cardano-ogmios/schema": "^5.6.0",
+    "bech32": "^2.0.0"
+  }
+}
