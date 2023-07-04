@@ -39,6 +39,7 @@ export * from "./inputsPickByAsset";
 export * from "./inputsPickAssetByPolicyId";
 
 // Picks - output
+export * from "./outputPickAssetByPolicyId";
 
 // Picks - outputs
 export * from "./outputsPickNonMatchingAddr";

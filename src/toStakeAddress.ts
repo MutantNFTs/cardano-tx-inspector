@@ -2,7 +2,13 @@ import { bech32 } from "bech32";
 
 import { hexToBytes } from "./hexToBytes";
 
+const PAYMENT_WITHOUT_STAKING_KEY_LENGTH = 58;
+
 export const toStakeAddress = (paymentAddress: string, network = "mainnet") => {
+  if (paymentAddress.length <= PAYMENT_WITHOUT_STAKING_KEY_LENGTH) {
+    return paymentAddress;
+  }
+
   const isMainnet = network === "mainnet";
   const value = bech32.decode(paymentAddress, 120);
   const bechWords = bech32.fromWords(value.words);

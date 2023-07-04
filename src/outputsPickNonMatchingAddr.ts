@@ -1,4 +1,5 @@
 import { TxOut } from "@cardano-ogmios/schema";
+
 import { toStakeAddress } from "./toStakeAddress";
 
 /**

@@ -1,13 +1,14 @@
 import { TxOut } from "@cardano-ogmios/schema";
-import { outputsPickByAsset } from "./outputsPickByAsset";
+
 import { isSameStakeAddr } from "./isSameStakeAddr";
+import { outputsPickByAsset } from "./outputsPickByAsset";
 
 /**
  * Checks if the given address is the owner of the given asset according to the outputs of the transaction
- * @param outputs 
- * @param addr 
- * @param asset 
- * @returns 
+ * @param outputs
+ * @param addr
+ * @param asset
+ * @returns
  */
 export const outputsIsAddressAssetOwner = (
   outputs: TxOut[],

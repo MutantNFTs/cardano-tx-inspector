@@ -8,4 +8,6 @@ export type BlockfrostTxsMetadata = Awaited<
   ReturnType<BlockFrostAPI["txsMetadata"]>
 >;
 
+export type BlockfrostUtxoValue = BlockfrostUtxo["amount"][0];
+
 export type BlockfrostAsset = Awaited<ReturnType<BlockFrostAPI["assetsById"]>>;

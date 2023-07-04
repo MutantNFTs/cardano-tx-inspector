@@ -1,6 +1,7 @@
-import { AuxiliaryData } from "@cardano-ogmios/schema";
-import { BlockfrostTxsMetadata } from "./types";
 import { unsafeMetadatumAsJSON } from "@cardano-ogmios/client";
+import { AuxiliaryData } from "@cardano-ogmios/schema";
+
+import { BlockfrostTxsMetadata } from "./types";
 
 export const auxiliaryDataGet674Message = (
   auxiliaryData: AuxiliaryData | null,

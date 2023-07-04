@@ -1,6 +1,7 @@
 import { AuxiliaryData } from "@cardano-ogmios/schema";
-import { BlockfrostTxsMetadata } from "./types";
+
 import { auxiliaryDataGet674Message } from "./auxiliaryDataGet674Message";
+import { BlockfrostTxsMetadata } from "./types";
 
 export const metadataContainsMessage = (
   message: string,
