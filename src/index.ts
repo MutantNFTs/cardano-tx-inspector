@@ -18,17 +18,21 @@ export * from "./utxosGetAddresses";
 
 // Gets - input
 export * from "./inputGetLovelace";
+export * from "./inputGetTotalAsset";
 
 // Gets - inputs
 export * from "./inputsGetLovelaceByAddress";
 export * from "./inputsGetPureLovelaceValue";
 export * from "./inputsGetLovelace";
+export * from "./inputsGetTotalAsset";
 
 // Gets - output
 export * from "./outputGetAssetQuantity";
+export * from "./outputsGetTotalAsset";
 
 // Gets - outputs
 export * from "./outputsGetLovelaceByAddress";
+export * from "./outputsGetTotalAsset";
 
 // Picks - input
 export * from "./inputPickAssetByPolicyId";
@@ -70,6 +74,8 @@ export * from "./outputsContainPolicyIds";
 export * from "./outputsIsAddressAssetOwner";
 
 // Utils
+export * from "./areAssetsEqual";
+export * from "./calculateTotalAssetMintedOrBurnt";
 export * from "./calculateLovelaceSpentByAddress";
 export * from "./toStakeAddress";
 export * from "./isSameStakeAddr";
