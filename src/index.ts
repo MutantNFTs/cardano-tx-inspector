@@ -84,7 +84,7 @@ export * from "./isValidNft";
 export * from "./cip25";
 export * from "./cip68";
 export * from "./toAda";
-export * from "./types.d";
+export * from "./types";
 
 export const Utils = {
   hexToString,

@@ -7,7 +7,7 @@ module.exports = {
     '!**/node_modules/**',
     '!./src/__utils/**',
     '!./src/index.ts',
-    '!./src/types.d.ts'
+    '!./src/types.ts'
   ],
   coverageThreshold: {
     global: {
