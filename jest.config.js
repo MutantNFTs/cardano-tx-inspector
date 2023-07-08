@@ -2,6 +2,13 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "node",
   workerThreads: true, // to handle bigint
+  collectCoverageFrom: [
+    './src/*.ts',
+    '!**/node_modules/**',
+    '!./src/__utils/**',
+    '!./src/index.ts',
+    '!./src/types.d.ts'
+  ],
   coverageThreshold: {
     global: {
       branches: 100,

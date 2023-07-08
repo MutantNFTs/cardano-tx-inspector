@@ -1,5 +1,7 @@
 import { TxOut } from "@cardano-ogmios/schema";
 
+import { getFakeCip68AssetName } from "./__utils__/getFakeCip68AssetName";
+import { getFakePolicyId } from "./__utils__/getFakePolicyId";
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
 
@@ -7,7 +9,7 @@ import { outputGetAssetQuantity } from "../outputGetAssetQuantity";
 
 describe("outputGetAssetQuantity", () => {
   it("returns the quantity of the specified asset if it exists in the output", () => {
-    const asset = "mockAsset";
+    const asset = getFakePolicyId() + "." + getFakeCip68AssetName();
     const quantity = 10n;
     const output: TxOut = getMockTxOut({
       address: getMockAddr(),
