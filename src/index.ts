@@ -66,6 +66,7 @@ export * from "./outputContainsAsset";
 
 // Checks - outputs
 export * from "./outputsContainPolicyId";
+export * from "./outputsContainPolicyIds";
 export * from "./outputsIsAddressAssetOwner";
 
 // Utils
