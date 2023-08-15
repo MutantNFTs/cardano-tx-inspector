@@ -3,9 +3,7 @@ import { isCip68Asset } from "./cip68";
 import { BlockfrostAsset } from "./types";
 
 export const isValidNft = (asset: BlockfrostAsset): boolean => {
-  const isUnique =
-    asset.quantity === "1" && typeof asset.onchain_metadata?.image === "string";
-
+  const isUnique = asset.quantity === "1";
   const hasImageDefined = typeof asset.onchain_metadata?.image === "string";
 
   const isValidCipAsset = Boolean(
