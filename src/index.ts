@@ -67,6 +67,7 @@ export * from "./inputsContainReferenceTxIds";
 // Checks - output
 export * from "./outputContainsPolicyId";
 export * from "./outputContainsAsset";
+export * from "./outputsFilterByAsset";
 
 // Checks - outputs
 export * from "./outputsContainPolicyId";
