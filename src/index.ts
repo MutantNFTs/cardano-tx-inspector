@@ -90,6 +90,9 @@ export * from "./cip25";
 export * from "./cip68";
 export * from "./toAda";
 export * from "./types";
+export * from "./toPubKeyHash";
+export * from "./toHexAddress";
+export * from "./bytesToHex";
 
 export const Utils = {
   hexToString,
