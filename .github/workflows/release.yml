@@ -58,13 +58,13 @@ jobs:
       - name: Setup SSH agent
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-          SSH_PRIVATE_KEY: ${{ secrets.RELEASE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${SSH_PRIVATE_KEY}"
+          ssh-add - <<< "$SSH_PRIVATE_KEY"
       - uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-private-key: ${{ secrets.RELEASE_KEY }}
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
         env:
