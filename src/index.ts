@@ -12,6 +12,7 @@ export * from "./utxosFilterByAddresses";
 
 // Filters - inputs
 export * from "./inputsFilterByReferenceTxId";
+export * from "./inputsFilterByPolicyId";
 
 // Gets - UTxOs (inputs / outputs)
 export * from "./utxosGetAddresses";
