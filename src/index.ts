@@ -14,6 +14,10 @@ export * from "./utxosFilterByAddresses";
 export * from "./inputsFilterByReferenceTxId";
 export * from "./inputsFilterByPolicyId";
 
+// Filters - outputs
+export * from "./outputsFilterByAsset";
+export * from "./outputsFilterNonMatchingAddr";
+
 // Gets - UTxOs (inputs / outputs)
 export * from "./utxosGetAddresses";
 
@@ -68,7 +72,6 @@ export * from "./inputsContainReferenceTxIds";
 // Checks - output
 export * from "./outputContainsPolicyId";
 export * from "./outputContainsAsset";
-export * from "./outputsFilterByAsset";
 
 // Checks - outputs
 export * from "./outputsContainPolicyId";
