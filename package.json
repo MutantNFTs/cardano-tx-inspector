@@ -1,7 +1,7 @@
 {
   "name": "@mutants/cardano-tx-inspector",
   "private": false,
-  "version": "1.4.1",
+  "version": "1.6.0",
   "description": "A package that provides utility functions to inspect a cardano transaction",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
