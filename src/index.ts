@@ -1,6 +1,3 @@
-import { hexToBytes } from "./hexToBytes";
-import { hexToString } from "./hexToString";
-
 // Filters - Tx
 export * from "./txFilterMintedAssetsByPolicyId";
 
@@ -79,22 +76,7 @@ export * from "./outputsContainPolicyIds";
 export * from "./outputsIsAddressAssetOwner";
 
 // Utils
-export * from "./areAssetsEqual";
 export * from "./calculateTotalAssetMintedOrBurnt";
 export * from "./calculateLovelaceSpentByAddress";
-export * from "./toStakeAddress";
-export * from "./isSameStakeAddr";
-export * from "./getAssetDetails";
 export * from "./isValidNft";
-export * from "./cip25";
-export * from "./cip68";
-export * from "./toAda";
 export * from "./types";
-export * from "./toPubKeyHash";
-export * from "./toHexAddress";
-export * from "./bytesToHex";
-
-export const Utils = {
-  hexToString,
-  hexToBytes,
-};

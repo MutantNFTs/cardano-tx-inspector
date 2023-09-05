@@ -1,6 +1,7 @@
 import { TxOut } from "@cardano-ogmios/schema";
 
-import { isSameStakeAddr } from "./isSameStakeAddr";
+import { isSameStakeAddress } from "@mutants/cardano-utils";
+
 import { outputsPickByAsset } from "./outputsPickByAsset";
 
 /**
@@ -17,5 +18,5 @@ export const outputsIsAddressAssetOwner = (
 ): boolean => {
   const output = outputsPickByAsset(outputs, asset);
 
-  return !!output && isSameStakeAddr(addr, output.address);
+  return !!output && isSameStakeAddress(addr, output.address);
 };

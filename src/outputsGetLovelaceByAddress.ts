@@ -1,6 +1,6 @@
 import { TxOut } from "@cardano-ogmios/schema";
 
-import { toStakeAddress } from "./toStakeAddress";
+import { toStakeAddress } from "@mutants/cardano-utils";
 
 export const outputsGetLovelaceByAddress = (
   outputs: TxOut[],

@@ -1,10 +1,9 @@
-import { isCip25Asset } from "../cip25";
-import { isCip68Asset } from "../cip68";
+import { isCip25Asset, isCip68Asset } from "@mutants/cardano-utils";
+
 import { isValidNft } from "../isValidNft";
 import { BlockfrostAsset } from "../types";
 
-jest.mock("../cip25");
-jest.mock("../cip68");
+jest.mock("@mutants/cardano-utils");
 
 describe("isValidNft", () => {
   afterEach(() => {

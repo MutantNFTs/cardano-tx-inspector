@@ -1,4 +1,6 @@
-import { areAssetsEqual } from "./areAssetsEqual";
+
+import { areAssetsEqual } from "@mutants/cardano-utils";
+
 import { BlockfrostUtxo } from "./types";
 
 export const inputGetTotalAsset = (input: BlockfrostUtxo, asset: string) => {

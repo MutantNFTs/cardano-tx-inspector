@@ -1,6 +1,6 @@
 import { TxOut } from "@cardano-ogmios/schema";
 
-import { toStakeAddress } from "./toStakeAddress";
+import { toStakeAddress } from "@mutants/cardano-utils";
 
 /**
  * Returns a list of outputs that do not match any of the addresses in the ignoreAddresses array.

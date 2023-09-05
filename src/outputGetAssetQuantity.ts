@@ -1,6 +1,6 @@
 import { TxOut } from "@cardano-ogmios/schema";
 
-import { getAssetDetails } from "./getAssetDetails";
+import { getAssetDetails } from "@mutants/cardano-utils";
 
 export const outputGetAssetQuantity = (output: TxOut, asset: string) => {
   if (!output.value.assets) {

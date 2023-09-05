@@ -1,5 +1,6 @@
+import { toStakeAddress } from "@mutants/cardano-utils";
+
 import { inputGetLovelace } from "./inputGetLovelace";
-import { toStakeAddress } from "./toStakeAddress";
 import { BlockfrostUtxo } from "./types";
 
 export const inputsGetLovelaceByAddress = (

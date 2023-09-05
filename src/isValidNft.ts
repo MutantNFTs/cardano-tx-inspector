@@ -1,5 +1,5 @@
-import { isCip25Asset } from "./cip25";
-import { isCip68Asset } from "./cip68";
+import { isCip25Asset, isCip68Asset } from "@mutants/cardano-utils";
+
 import { BlockfrostAsset } from "./types";
 
 export const isValidNft = (asset: BlockfrostAsset): boolean => {

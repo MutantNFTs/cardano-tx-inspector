@@ -1,19 +1,20 @@
 import { TxOut } from "@cardano-ogmios/schema";
 
+import { isSameStakeAddress } from "@mutants/cardano-utils";
+
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
 
-import { isSameStakeAddr } from "../isSameStakeAddr";
 import { outputsIsAddressAssetOwner } from "../outputsIsAddressAssetOwner";
 import { outputsPickByAsset } from "../outputsPickByAsset";
 
+jest.mock("@mutants/cardano-utils");
 jest.mock("../outputsPickByAsset");
-jest.mock("../isSameStakeAddr");
 
 describe("outputsIsAddressAssetOwner", () => {
   beforeEach(() => {
     (outputsPickByAsset as jest.Mock).mockClear();
-    (isSameStakeAddr as jest.Mock).mockClear();
+    (isSameStakeAddress as jest.Mock).mockClear();
   });
 
   it("returns true if the address owns the specified asset", () => {
@@ -28,7 +29,7 @@ describe("outputsIsAddressAssetOwner", () => {
     });
 
     (outputsPickByAsset as jest.Mock).mockReturnValue(output);
-    (isSameStakeAddr as jest.Mock).mockReturnValue(true);
+    (isSameStakeAddress as jest.Mock).mockReturnValue(true);
 
     const result = outputsIsAddressAssetOwner([output], addr, asset);
 
@@ -47,7 +48,7 @@ describe("outputsIsAddressAssetOwner", () => {
     });
 
     (outputsPickByAsset as jest.Mock).mockReturnValue(output);
-    (isSameStakeAddr as jest.Mock).mockReturnValue(false);
+    (isSameStakeAddress as jest.Mock).mockReturnValue(false);
 
     const result = outputsIsAddressAssetOwner([output], addr, asset);
 
@@ -59,7 +60,7 @@ describe("outputsIsAddressAssetOwner", () => {
     const asset = "mockAsset";
 
     (outputsPickByAsset as jest.Mock).mockReturnValue(undefined);
-    (isSameStakeAddr as jest.Mock).mockReturnValue(false);
+    (isSameStakeAddress as jest.Mock).mockReturnValue(false);
 
     const result = outputsIsAddressAssetOwner([], addr, asset);
 
