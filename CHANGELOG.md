@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v1.7.0...v2.0.0) (2023-09-05)
+
+
+### Features
+
+* utils from cardano-utils ([7b9df23](https://github.com/MutantNFTs/cardano-tx-inspector/commit/7b9df231fc78573f3a6e3a702ed479e1bc12a3da))
+
+
+### BREAKING CHANGES
+
+* utils from cardano utils have been removed.
+Use @mutants/cardano-utils package instead.
+
 # [1.7.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v1.6.0...v1.7.0) (2023-09-04)
 
 
