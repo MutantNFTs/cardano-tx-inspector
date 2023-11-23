@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.0.0...v2.1.0) (2023-11-23)
+
+
+### Features
+
+* valueContainsValue util ([a00e6c6](https://github.com/MutantNFTs/cardano-tx-inspector/commit/a00e6c61dbe4c561e179fba9fcf387c7e64546d9))
+
 # [2.0.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v1.7.0...v2.0.0) (2023-09-05)
 
 
