@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.1.0...v2.1.1) (2023-11-23)
+
+
+### Bug Fixes
+
+* export valueContainsValue ([d718b43](https://github.com/MutantNFTs/cardano-tx-inspector/commit/d718b430f201f95f80bd0cc34022485d7f9a0410))
+
 # [2.1.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.0.0...v2.1.0) (2023-11-23)
 
 
