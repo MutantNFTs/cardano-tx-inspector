@@ -76,6 +76,7 @@ export * from "./outputsContainPolicyIds";
 export * from "./outputsIsAddressAssetOwner";
 
 // Utils
+export * from "./valueContainsValue";
 export * from "./calculateTotalAssetMintedOrBurnt";
 export * from "./calculateLovelaceSpentByAddress";
 export * from "./isValidNft";
