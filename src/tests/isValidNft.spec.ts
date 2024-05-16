@@ -62,7 +62,7 @@ describe("isValidNft", () => {
     const asset = {
       quantity: "1",
       onchain_metadata: {
-        image: "validImageUrl",
+        image: ["validImage", "bytes"],
       },
     };
 
