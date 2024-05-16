@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.1.1...v2.2.0) (2024-05-16)
+
+
+### Features
+
+* accept array as image ([0818b1e](https://github.com/MutantNFTs/cardano-tx-inspector/commit/0818b1edd276f042eaf810e21171196d970e108d))
+
 ## [2.1.1](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.1.0...v2.1.1) (2023-11-23)
 
 
