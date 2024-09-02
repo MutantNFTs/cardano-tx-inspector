@@ -1,9 +1,9 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { outputPickAssetByPolicyId } from "./outputPickAssetByPolicyId";
 
 export const outputsPickAssetByPolicyId = (
-  outputs: TxOut[],
+  outputs: TransactionOutput[],
   policyId: string
 ) => {
   for (const o of outputs) {

@@ -1,8 +1,8 @@
-import { TxIn } from "@cardano-ogmios/schema";
+import { TransactionOutputReference } from "@cardano-ogmios/schema";
 
 export const inputsFilterByReferenceTxId = (
-  inputs: TxIn[],
+  inputs: TransactionOutputReference[],
   txIds: string[]
-) => {
-  return inputs.filter((i) => txIds.some((txId) => txId === i.txId));
+): TransactionOutputReference[] => {
+  return inputs.filter((i) => txIds.some((txId) => txId === i.transaction.id));
 };

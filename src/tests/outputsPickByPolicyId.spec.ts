@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
@@ -15,11 +15,13 @@ describe("outputsPickByPolicyId", () => {
 
   it("returns the output that contains the specified policy ID", () => {
     const policyId = "mockPolicyId";
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
       additionalAssets: {
-        [policyId]: 1n,
+        [policyId]: {
+          asset1: 1n,
+        },
       },
     });
 
@@ -32,7 +34,7 @@ describe("outputsPickByPolicyId", () => {
 
   it("returns null if no output contains the specified policy ID", () => {
     const policyId = "mockPolicyId";
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
     });

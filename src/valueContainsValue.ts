@@ -1,21 +1,29 @@
 import { Value } from "@cardano-ogmios/schema";
 
 export const valueContainsValue = (value: Value, expectedValue: Value) => {
-  if (value.coins < expectedValue.coins) {
+  if (value.ada.lovelace < expectedValue.ada.lovelace) {
     return false;
   }
 
-  const expectedValuePoliciesList = Object.keys(value.assets || {});
+  const expectedValuePoliciesList = Object.keys(value || {}).filter(
+    (key) => key !== "ada"
+  );
 
-  for (const asset of expectedValuePoliciesList) {
-    const valueAssetQuantity = value.assets?.[asset];
+  for (const policyId of expectedValuePoliciesList) {
+    const expectedValueAssetsList = Object.keys(
+      expectedValue?.[policyId] || {}
+    );
 
-    if (!valueAssetQuantity) {
-      return false;
-    }
+    for (const asset of expectedValueAssetsList) {
+      const valueAssetQuantity = value?.[policyId]?.[asset];
 
-    if (valueAssetQuantity < (expectedValue.assets?.[asset] || 0n)) {
-      return false;
+      if (!valueAssetQuantity) {
+        return false;
+      }
+
+      if (valueAssetQuantity < (expectedValue?.[policyId]?.[asset] || 0n)) {
+        return false;
+      }
     }
   }
 

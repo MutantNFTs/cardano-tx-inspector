@@ -1,8 +1,8 @@
-import { TxIn } from "@cardano-ogmios/schema";
+import { TransactionOutputReference } from "@cardano-ogmios/schema";
 
 export const inputsContainReferenceTxIds = (
-  inputs: TxIn[],
+  inputs: TransactionOutputReference[],
   txIds: string[]
 ) => {
-  return inputs.some((i) => txIds.some((txId) => txId === i.txId));
+  return inputs.some((i) => txIds.some((txId) => txId === i.transaction.id));
 };

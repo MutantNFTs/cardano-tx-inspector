@@ -1,9 +1,9 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { toStakeAddress } from "@mutants/cardano-utils";
 
 export const outputsGetLovelaceByAddress = (
-  outputs: TxOut[],
+  outputs: TransactionOutput[],
   addr: string
 ): bigint => {
   let totalLovelaceOutput = 0n;
@@ -11,7 +11,7 @@ export const outputsGetLovelaceByAddress = (
 
   for (const output of outputs) {
     if (toStakeAddress(output.address) === stakeAddr) {
-      const lovelaceOutput = output?.value?.coins;
+      const lovelaceOutput = output?.value?.ada.lovelace;
 
       totalLovelaceOutput += lovelaceOutput;
     }

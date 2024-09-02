@@ -1,23 +1,12 @@
-import { unsafeMetadatumAsJSON } from "@cardano-ogmios/client";
-import { AuxiliaryData } from "@cardano-ogmios/schema";
+import { Metadata, ObjectNoSchema } from "@cardano-ogmios/schema";
 
 import { BlockfrostTxsMetadata } from "./types";
 
 export const auxiliaryDataGet674Message = (
-  auxiliaryData: AuxiliaryData | null,
+  auxiliaryData: Metadata | null,
   blockfrostMetadata?: BlockfrostTxsMetadata
 ): string[] | null => {
-  if (auxiliaryData?.body.blob) {
-    const public674label = auxiliaryData.body.blob["674"];
-
-    if (public674label) {
-      const metadataJson = unsafeMetadatumAsJSON(public674label);
-
-      if (Array.isArray(metadataJson?.msg)) {
-        return metadataJson.msg;
-      }
-    }
-  } else if (blockfrostMetadata) {
+  if (blockfrostMetadata) {
     const public674label = blockfrostMetadata.find((m) => m.label === "674");
 
     const maybeMsg = (
@@ -26,6 +15,16 @@ export const auxiliaryDataGet674Message = (
 
     if (maybeMsg && Array.isArray(maybeMsg)) {
       return maybeMsg;
+    }
+  } else if (auxiliaryData?.labels?.["674"]) {
+    const public674label = auxiliaryData.labels["674"];
+
+    if (public674label.json) {
+      const metadataJson = public674label.json as ObjectNoSchema;
+
+      if (Array.isArray(metadataJson?.msg)) {
+        return metadataJson.msg as string[];
+      }
     }
   }
 

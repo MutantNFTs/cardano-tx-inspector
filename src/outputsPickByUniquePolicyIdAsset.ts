@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { outputContainsPolicyId } from "./outputContainsPolicyId";
 
@@ -9,14 +9,14 @@ import { outputContainsPolicyId } from "./outputContainsPolicyId";
  * @returns
  */
 export const outputsPickByUniquePolicyIdAsset = (
-  outputs: TxOut[],
+  outputs: TransactionOutput[],
   policyId: string
 ) => {
   for (const output of outputs) {
     if (
-      output.value.assets &&
+      output.value &&
       outputContainsPolicyId(output, policyId) &&
-      Object.keys(output.value.assets).length === 1
+      Object.keys(output.value?.[policyId] || {}).length === 1
     ) {
       return output;
     }
