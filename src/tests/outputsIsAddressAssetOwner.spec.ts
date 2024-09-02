@@ -1,7 +1,8 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { isSameStakeAddress } from "@mutants/cardano-utils";
 
+import { getFakePolicyId } from "./__utils__/getFakePolicyId";
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
 
@@ -19,12 +20,14 @@ describe("outputsIsAddressAssetOwner", () => {
 
   it("returns true if the address owns the specified asset", () => {
     const addr = getMockAddr();
-    const asset = "mockAsset";
-    const output: TxOut = getMockTxOut({
+    const asset = getFakePolicyId() + "." + "mockAsset";
+    const output: TransactionOutput = getMockTxOut({
       address: addr,
       lovelace: 1000n,
       additionalAssets: {
-        [asset]: 10n,
+        [getFakePolicyId()]: {
+          mockAsset: 10n,
+        },
       },
     });
 
@@ -38,12 +41,14 @@ describe("outputsIsAddressAssetOwner", () => {
 
   it("returns false if the address does not own the specified asset", () => {
     const addr = getMockAddr();
-    const asset = "mockAsset";
-    const output: TxOut = getMockTxOut({
+    const asset = getFakePolicyId() + "." + "mockAsset";
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(1),
       lovelace: 1000n,
       additionalAssets: {
-        [asset]: 10n,
+        [getFakePolicyId()]: {
+          mockAsset: 10n,
+        },
       },
     });
 

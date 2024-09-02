@@ -54,7 +54,9 @@ describe("calculateTotalAssetMintedOrBurnt", () => {
         address: getMockAddr(),
         lovelace: 10n,
         additionalAssets: {
-          [mockAsset]: 1n,
+          [getFakePolicyId()]: {
+            [getFakeCip68AssetName()]: 1n,
+          },
         },
       });
 

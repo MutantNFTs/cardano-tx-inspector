@@ -1,9 +1,9 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { outputGetAssetQuantity } from "./outputGetAssetQuantity";
 
 export const outputsGetTotalAsset = (
-  outputs: TxOut[],
+  outputs: TransactionOutput[],
   asset: string
 ): bigint => {
   let totalLovelaceOutput = 0n;

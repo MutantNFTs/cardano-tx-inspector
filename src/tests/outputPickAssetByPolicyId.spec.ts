@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
@@ -9,11 +9,13 @@ describe("outputPickAssetByPolicyId", () => {
   it("returns the asset if the policy ID exists in the output", () => {
     const policyId = "mockPolicyId";
     const asset = `${policyId}.asset1`;
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
       additionalAssets: {
-        [asset]: 10n,
+        [policyId]: {
+          asset1: 10n,
+        },
       },
     });
 
@@ -25,12 +27,14 @@ describe("outputPickAssetByPolicyId", () => {
   it("returns undefined if the specified policy ID does not exist in the output", () => {
     const policyId = "mockPolicyId";
     const anotherPolicyId = "anotherPolicyId";
-    const asset = `${anotherPolicyId}.asset1`;
-    const output: TxOut = getMockTxOut({
+
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
       additionalAssets: {
-        [asset]: 10n,
+        [anotherPolicyId]: {
+          asset1: 10n,
+        },
       },
     });
 
@@ -41,7 +45,7 @@ describe("outputPickAssetByPolicyId", () => {
 
   it("returns undefined if the output does not have any assets", () => {
     const policyId = "mockPolicyId";
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
     });

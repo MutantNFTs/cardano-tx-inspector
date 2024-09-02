@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
@@ -9,11 +9,11 @@ describe("outputsPickNonMatchingAddr", () => {
   it("returns the first output that does not match any of the ignore addresses", () => {
     const ignoreAddresses = [getMockAddr(), getMockAddr(1)];
     const matchingAddr = getMockAddr(2);
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: matchingAddr,
       lovelace: 1000n,
     });
-    const output2: TxOut = getMockTxOut({
+    const output2: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
     });
@@ -28,7 +28,7 @@ describe("outputsPickNonMatchingAddr", () => {
 
   it("returns undefined if all outputs match the ignore addresses", () => {
     const ignoreAddresses = [getMockAddr(), getMockAddr(1)];
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: ignoreAddresses[0],
       lovelace: 1000n,
     });

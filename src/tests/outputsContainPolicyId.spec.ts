@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
@@ -15,7 +15,7 @@ describe("outputsContainPolicyId", () => {
 
   it("returns true if the policy ID exists in any of the outputs", () => {
     const policyId = "mockPolicyId";
-    const outputs: TxOut[] = [
+    const outputs: TransactionOutput[] = [
       getMockTxOut({
         address: getMockAddr(),
         lovelace: 1000n,
@@ -37,7 +37,7 @@ describe("outputsContainPolicyId", () => {
 
   it("returns false if the specified policy ID does not exist in any of the outputs", () => {
     const policyId = "mockPolicyId";
-    const outputs: TxOut[] = [
+    const outputs: TransactionOutput[] = [
       getMockTxOut({
         address: getMockAddr(),
         lovelace: 1000n,
@@ -57,7 +57,7 @@ describe("outputsContainPolicyId", () => {
 
   it("returns false if there are no outputs", () => {
     const policyId = "mockPolicyId";
-    const outputs: TxOut[] = [];
+    const outputs: TransactionOutput[] = [];
 
     const result = outputsContainPolicyId(outputs, policyId);
 

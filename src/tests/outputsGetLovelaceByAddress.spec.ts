@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { getMockAddr } from "./__utils__/getMockAddr";
 import { getMockTxOut } from "./__utils__/getMockTxOut";
@@ -9,7 +9,7 @@ describe("outputsGetLovelaceByAddress", () => {
   it("returns total lovelace for the specified address", () => {
     const addr = getMockAddr();
 
-    const outputs: TxOut[] = [
+    const outputs: TransactionOutput[] = [
       getMockTxOut({
         address: addr,
         lovelace: 1000n,
@@ -29,7 +29,7 @@ describe("outputsGetLovelaceByAddress", () => {
     const addr = getMockAddr();
     const anotherAddr = getMockAddr(1);
 
-    const outputs: TxOut[] = [
+    const outputs: TransactionOutput[] = [
       getMockTxOut({
         address: anotherAddr,
         lovelace: 1000n,
@@ -47,7 +47,7 @@ describe("outputsGetLovelaceByAddress", () => {
 
   it("returns zero if there are no outputs", () => {
     const addr = getMockAddr();
-    const outputs: TxOut[] = [];
+    const outputs: TransactionOutput[] = [];
 
     const result = outputsGetLovelaceByAddress(outputs, addr);
 

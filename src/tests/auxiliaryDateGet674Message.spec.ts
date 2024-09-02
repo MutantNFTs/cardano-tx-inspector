@@ -1,5 +1,6 @@
-import { unsafeMetadatumAsJSON } from "@cardano-ogmios/client";
-import { AuxiliaryData } from "@cardano-ogmios/schema";
+import { Metadata } from "@cardano-ogmios/schema";
+
+import { getAuxiliaryData674Message } from "./__utils__/getAuxiliaryData674Message";
 
 import { auxiliaryDataGet674Message } from "../auxiliaryDataGet674Message";
 
@@ -10,20 +11,7 @@ describe("auxiliaryDataGet674Message", () => {
 
   describe("when the metadata comes from Ogmios", () => {
     beforeEach(() => {
-      (unsafeMetadatumAsJSON as jest.Mock).mockReturnValueOnce({
-        msg: ["Hello", "World"],
-      });
-
-      const auxiliaryData: AuxiliaryData = {
-        hash: "0x0000000",
-        body: {
-          blob: {
-            "674": {
-              bytes: "48656c6c6f2c20576f726c6421",
-            },
-          },
-        },
-      };
+      const auxiliaryData: Metadata = getAuxiliaryData674Message();
 
       output = auxiliaryDataGet674Message(auxiliaryData);
     });
@@ -52,11 +40,11 @@ describe("auxiliaryDataGet674Message", () => {
 
   describe("when there is no 674 metadata", () => {
     beforeEach(() => {
-      const auxiliaryData: AuxiliaryData = {
+      const auxiliaryData: Metadata = {
         hash: "0x0000000",
-        body: {
-          blob: {
-            "675": {
+        labels: {
+          "675": {
+            json: {
               bytes: "48656c6c6f2c20576f726c6421",
             },
           },

@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { getFakeCip68AssetName } from "./__utils__/getFakeCip68AssetName";
 import { getFakePolicyId } from "./__utils__/getFakePolicyId";
@@ -10,11 +10,13 @@ import { outputContainsAsset } from "../outputContainsAsset";
 describe("outputContainsAsset", () => {
   it("returns true if the output contains the specified asset", () => {
     const asset = getFakePolicyId() + "." + getFakeCip68AssetName();
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
       additionalAssets: {
-        [asset]: 1n,
+        [getFakePolicyId()]: {
+          [getFakeCip68AssetName()]: 1n,
+        },
       },
     });
 
@@ -25,11 +27,13 @@ describe("outputContainsAsset", () => {
 
   it("returns false if the output does not contain the specified asset", () => {
     const asset = getFakePolicyId() + "." + getFakeCip68AssetName();
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
       additionalAssets: {
-        anotherAsset: 1n,
+        [getFakePolicyId()]: {
+          anotherAsset: 1n,
+        },
       },
     });
 
@@ -40,7 +44,7 @@ describe("outputContainsAsset", () => {
 
   it("returns false if the output does not have any assets", () => {
     const asset = getFakePolicyId() + "." + getFakeCip68AssetName();
-    const output: TxOut = getMockTxOut({
+    const output: TransactionOutput = getMockTxOut({
       address: getMockAddr(),
       lovelace: 1000n,
     });

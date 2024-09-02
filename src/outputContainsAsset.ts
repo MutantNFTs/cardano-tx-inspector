@@ -1,9 +1,9 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { outputGetAssetQuantity } from "./outputGetAssetQuantity";
 
-export const outputContainsAsset = (output: TxOut, asset: string) => {
-  if (!output.value?.assets) {
+export const outputContainsAsset = (output: TransactionOutput, asset: string) => {
+  if (!output.value) {
     return false;
   }
 

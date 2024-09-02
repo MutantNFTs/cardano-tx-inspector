@@ -16,7 +16,9 @@ describe("outputsGetTotalAsset", () => {
         address: getMockAddr(),
         lovelace: 10n,
         additionalAssets: {
-          [mockAsset]: 10n,
+          [getFakePolicyId()]: {
+            [getFakeCip68AssetName()]: 10n,
+          },
         },
       });
 

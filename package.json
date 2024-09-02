@@ -62,8 +62,8 @@
   },
   "dependencies": {
     "@blockfrost/blockfrost-js": "^5.3.1",
-    "@cardano-ogmios/client": "^5.6.0",
-    "@cardano-ogmios/schema": "^5.6.0",
+    "@cardano-ogmios/client": "^6.6.1",
+    "@cardano-ogmios/schema": "^6.6.1",
     "@mutants/cardano-utils": "^1.0.4",
     "bech32": "^2.0.0"
   }

@@ -1,12 +1,12 @@
-import { TxBabbage } from "@cardano-ogmios/schema";
+import { Transaction } from "@cardano-ogmios/schema";
 
 export const txFilterMintedAssetsByPolicyId = (
-  tx: TxBabbage,
+  tx: Transaction,
   policyId: string
 ): string[] => {
-  if (tx.body.mint.assets && Object.keys(tx.body.mint.assets).length > 0) {
-    return Object.keys(tx.body.mint.assets).filter((asset) =>
-      asset.startsWith(policyId)
+  if (tx.mint && Object.keys(tx.mint).length > 0) {
+    return Object.keys(tx.mint?.[policyId] || {}).map(
+      (asset) => `${policyId}.${asset}`
     );
   }
 

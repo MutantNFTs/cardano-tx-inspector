@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { toStakeAddress } from "@mutants/cardano-utils";
 
@@ -8,7 +8,7 @@ import { toStakeAddress } from "@mutants/cardano-utils";
  * @param ignoreAddresses
  */
 export const outputsFilterNonMatchingAddr = (
-  outputs: TxOut[],
+  outputs: TransactionOutput[],
   ignoreAddresses: string[]
 ) => {
   return outputs.filter((output) => {

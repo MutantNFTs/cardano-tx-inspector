@@ -1,4 +1,4 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
 import { isSameStakeAddress } from "@mutants/cardano-utils";
 
@@ -12,7 +12,7 @@ import { outputsPickByAsset } from "./outputsPickByAsset";
  * @returns
  */
 export const outputsIsAddressAssetOwner = (
-  outputs: TxOut[],
+  outputs: TransactionOutput[],
   addr: string,
   asset: string
 ): boolean => {

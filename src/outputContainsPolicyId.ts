@@ -1,8 +1,8 @@
-import { TxOut } from "@cardano-ogmios/schema";
+import { TransactionOutput } from "@cardano-ogmios/schema";
 
-export const outputContainsPolicyId = (output: TxOut, policyId: string) => {
+export const outputContainsPolicyId = (output: TransactionOutput, policyId: string) => {
   return (
-    !!output.value.assets &&
-    Object.keys(output.value.assets).some((key) => key.startsWith(policyId))
+    !!output.value &&
+    Object.keys(output.value).some((key) => key === policyId)
   );
 };
