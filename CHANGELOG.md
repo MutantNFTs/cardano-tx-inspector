@@ -1,3 +1,13 @@
+# [3.0.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.2.0...v3.0.0) (2024-09-02)
+
+
+* feat(ogmios)!: bump ogmios to version 6 ([40f94c9](https://github.com/MutantNFTs/cardano-tx-inspector/commit/40f94c900795d03185eba7422d23e31ad6eb5fe0))
+
+
+### BREAKING CHANGES
+
+* bump to ogmios 6
+
 # [2.2.0](https://github.com/MutantNFTs/cardano-tx-inspector/compare/v2.1.1...v2.2.0) (2024-05-16)
 
 
